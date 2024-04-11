@@ -1,5 +1,5 @@
 # Data Collection and CSV Update Script
-
+#this doesn´t need to be a separate script, it can be inside the main document
 import csv
 import time
 import random
