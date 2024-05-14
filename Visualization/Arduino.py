@@ -18,3 +18,5 @@ def process_data():
     sensorValue2.apped(int(sensorValues[2]))
 
     print(f'Tiempo:  {sensorValues[0]}, Sensor 1 : {sensorValues[1]}, Sensor 2: {sensorValues[2]}')
+
+process_data()
