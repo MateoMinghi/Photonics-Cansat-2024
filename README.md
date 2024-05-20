@@ -1,6 +1,6 @@
 # CanSat World Cup 2024
 
- <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/banner_cansat.png" width="300" height="300">
+ <p align="center"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/banner_cansat.png"></p>
 
 The CanSat World Course-Competition is an end-to-end life cycle complex engineering project challenge for students to incorporate the main subsystems found in a satellite (electronic components, sensors and a telemetry system).
 
