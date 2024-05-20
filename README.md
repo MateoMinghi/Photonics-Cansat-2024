@@ -12,15 +12,35 @@ For further information about the contest:
 ### Electronics System
 
 Circuit for the primary stage:
-<p align="left"> <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png" width="60%"/></p> 
 
-
-<p align="left"> <img src="primary_circuit.jpeg" width="60%"/></p> 
+<div align="center">
+    <table >
+     <tr>
+        <td><b>Diagram</b></td>
+        <td><b>Circuit</b></td>
+     </tr>
+     <tr>
+       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/primary_diagram.png"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/primary_diagram.png" > </img></a></td>
+       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/primary_circuit.jpeg"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/primary_circuit.jpeg"></img></a></td>
+     </tr>
+    </table>
+    </div>
 
 Circuit for the secondary stage:
-<p align="left"> <img src="secondary_diagram.png" width="60%"/></p> 
 
-<p align="left"> <img src="secnodary_circuit.jpeg" width="60%"/></p> 
+<div align="center">
+    <table >
+     <tr>
+        <td><b>Diagram</b></td>
+        <td><b>Circuit</b></td>
+     </tr>
+     <tr>
+       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png" > </img></a></td>
+       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_circuit.jpeg"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_circuit.jpeg"></img></a></td>
+     </tr>
+    </table>
+    </div>
+
 
 Project Design Slides:
 
@@ -30,19 +50,3 @@ https://docs.google.com/file/d/1e1J56mg0GuxXB877cBg4IVVOmquFTbwD/edit?filetype=m
 
 https://docs.google.com/presentation/d/1cosc5_qBbo0QIGDXYjj1O37L7R_xW0Vm/edit#slide=id.p1
  
-
-
-<div align="center">
-    <table >
-     <tr>
-        <td><b>Primary Stage</b></td>
-        <td><b>Secondary Stage</b></td>
-     </tr>
-     <tr>
-       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png" > </img></a></td>
-       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png"></img></a></td>
-     </tr>
-    </table>
-    </div>
-
-    
