@@ -14,32 +14,50 @@ For further information about the contest:
 Circuit for the primary stage:
 
 <div align="center">
-    <table >
-     <tr>
-        <td><b>Diagram</b></td>
-        <td><b>Circuit</b></td>
-     </tr>
-     <tr>
-       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/primary_diagram.png"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/primary_diagram.png" > </img></a></td>
-       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/primary_circuit.jpeg"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/primary_circuit.jpeg"></img></a></td>
-     </tr>
+    <table>
+        <tr>
+            <td><b>Diagram</b></td>
+            <td><b>Circuit</b></td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png">
+                    <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png" width="300" height="300">
+                </img></a>
+            </td>
+            <td>
+                <a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secnodary_circuit.jpeg">
+                    <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secnodary_circuit.jpeg" width="300" height="300">
+                </img></a>
+            </td>
+        </tr>
     </table>
-    </div>
+</div>
+
 
 Circuit for the secondary stage:
 
 <div align="center">
-    <table >
-     <tr>
-        <td><b>Diagram</b></td>
-        <td><b>Circuit</b></td>
-     </tr>
-     <tr>
-       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png" > </img></a></td>
-       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secnodary_circuit.jpeg"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secnodary_circuit.jpeg"></img></a></td>
-     </tr>
+    <table>
+        <tr>
+            <td><b>Diagram</b></td>
+            <td><b>Circuit</b></td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png">
+                    <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png" width="300" height="300">
+                </img></a>
+            </td>
+            <td>
+                <a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secnodary_circuit.jpeg">
+                    <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secnodary_circuit.jpeg" width="300" height="300">
+                </img></a>
+            </td>
+        </tr>
     </table>
-    </div>
+</div>
+
 
 
 Project Design Slides:
