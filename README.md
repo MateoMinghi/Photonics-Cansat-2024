@@ -36,7 +36,7 @@ Circuit for the secondary stage:
      </tr>
      <tr>
        <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png" > </img></a></td>
-       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_circuit.jpeg"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_circuit.jpeg"></img></a></td>
+       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secnodary_circuit.jpeg"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secnodary_circuit.jpeg"></img></a></td>
      </tr>
     </table>
     </div>
