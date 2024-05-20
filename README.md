@@ -12,7 +12,8 @@ For further information about the contest:
 ### Electronics System
 
 Circuit for the primary stage:
-<p align="left"> <img src="primary_diagram.png" width="60%"/></p> 
+<p align="left"> <img src="https://github.com/MateoMinghi/Photonics/blob/main/imgs/primary_diagram.png" width="60%"/></p> 
+
 
 <p align="left"> <img src="primary_circuit.jpeg" width="60%"/></p> 
 
