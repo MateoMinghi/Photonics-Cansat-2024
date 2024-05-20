@@ -11,6 +11,10 @@ For further information about the contest:
 ----
 ### Electronics System
 
+The idea was to divide our satellite into two stages. The first stage only carried a GPS chip, while the second stage contained all the sensors (UV radiation, altitud, acceleration, pressure, GPS). 
+
+Both stages had an independent LoRa module to transmit real-time information via radio to a third independent LoRa module, which was connected to the graphic interphase for the real-time data visualization.
+
 Circuit for the primary stage:
 
 <div align="center">
@@ -62,9 +66,27 @@ Circuit for the secondary stage:
 
 Project Design Slides:
 
-https://docs.google.com/file/d/1e1J56mg0GuxXB877cBg4IVVOmquFTbwD/edit?filetype=mspresentation
+* https://docs.google.com/file/d/1e1J56mg0GuxXB877cBg4IVVOmquFTbwD/edit?filetype=mspresentation
 
-https://docs.google.com/file/d/1e1J56mg0GuxXB877cBg4IVVOmquFTbwD/edit?filetype=mspresentation
+* https://docs.google.com/file/d/1e1J56mg0GuxXB877cBg4IVVOmquFTbwD/edit?filetype=mspresentation
 
-https://docs.google.com/presentation/d/1cosc5_qBbo0QIGDXYjj1O37L7R_xW0Vm/edit#slide=id.p1
+* https://docs.google.com/presentation/d/1cosc5_qBbo0QIGDXYjj1O37L7R_xW0Vm/edit#slide=id.p1
  
+---
+### Data Visualization Interphase
+
+In order to visualize the data retreived by the sensors, and transmited by the LoRa modules, it was decided to use Bokeh. Bokeh is an interactive visualization python library for web browsers. 
+
+> Bokeh is particulary useful because it supports data streams,  allowing the plots to update automatically without having to refresh the browser, or even without having to save the data into a csv file.
+
+The code can be foud inside the /Visualization/ folder.
+
+To run the visualization, the dependencies found on requirements.txt must be installed, and using the following command:
+
+```
+bokeh serve --show main.py
+```
+
+Of course no data will be displayed unless the circuits are up and running, but a simulation of the interphase working can be found in /simulations.py
+
+<p align="center"> <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/visualization.png" width="60%"/></p> 
