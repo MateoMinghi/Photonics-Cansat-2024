@@ -9,7 +9,7 @@ For further information about the contest:
 * https://www.cansatcompetition.com/
 
 ----
-### Electronics System
+### Electronics System[^2]
 
 The idea was to divide our satellite into two stages. The first stage only carried a GPS chip, while the second stage contained all the sensors (UV radiation, altitud, acceleration, pressure, GPS). 
 
@@ -93,3 +93,5 @@ Of course no data will be displayed unless the circuits are up and running, but 
 
 
 [^1]: Team composed by: Mateo Minghi, Samir Baidon, Manuel Romero, Roberto Ibarra, Daniela Jimenez
+
+[^2]: Electronics and Software designed and developed by Mateo Minghi, Samir Baidon, Daniela Jimenez 
