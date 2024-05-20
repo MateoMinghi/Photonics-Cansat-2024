@@ -21,13 +21,13 @@ Circuit for the primary stage:
         </tr>
         <tr>
             <td>
-                <a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png">
-                    <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png" width="300" height="300">
+                <a href="https://github.com/MateoMinghi/Photonics/blob/main/img/primary_diagram.png">
+                    <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/primary_diagram.png" width="300" height="300">
                 </img></a>
             </td>
             <td>
-                <a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secnodary_circuit.jpeg">
-                    <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secnodary_circuit.jpeg" width="300" height="300">
+                <a href="https://github.com/MateoMinghi/Photonics/blob/main/img/primary_circuit.jpeg">
+                    <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/primary_circuit.jpeg" width="300" height="300">
                 </img></a>
             </td>
         </tr>
