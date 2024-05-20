@@ -39,8 +39,10 @@ https://docs.google.com/presentation/d/1cosc5_qBbo0QIGDXYjj1O37L7R_xW0Vm/edit#sl
         <td><b>Secondary Stage</b></td>
      </tr>
      <tr>
-       <td><a href="secnodary_circuit.jpeg"><img src="secnodary_circuit.jpeg" > </img></a></td>
-       <td><a href="secnodary_circuit.jpeg"><img src="secnodary_circuit.jpeg"></img></a></td>
+       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png" > </img></a></td>
+       <td><a href="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png"><img src="https://github.com/MateoMinghi/Photonics/blob/main/img/secondary_diagram.png"></img></a></td>
      </tr>
     </table>
     </div>
+
+    
