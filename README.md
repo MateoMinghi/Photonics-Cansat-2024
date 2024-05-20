@@ -2,7 +2,7 @@
 
 The CanSat World Course-Competition is an end-to-end life cycle complex engineering project challenge for students to incorporate the main subsystems found in a satellite (electronic components, sensors and a telemetry system).
 
-The team participated in the 2024 edition, hosted by the National Autonomous University of Mexico (UNAM in spanish); and managed to reach the national finals.
+The team[^1] participated in the 2024 edition, hosted by the National Autonomous University of Mexico (UNAM in spanish); and managed to reach the national finals.
 
 For further information about the contest:
 * http://peu.unam.mx/cansat2024.html
@@ -90,3 +90,6 @@ bokeh serve --show main.py
 Of course no data will be displayed unless the circuits are up and running, but a simulation of the interphase working can be found in /simulations.py
 
 <p align="center"> <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/visualization.png" width="60%"/></p> 
+
+
+[^1]: Team composed by: Mateo Minghi, Samir Baidon, Manuel Romero, Roberto Ibarra, Daniela Jimenez
