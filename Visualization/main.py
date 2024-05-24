@@ -82,9 +82,9 @@ def update():
     new_data4 = dict(x=[timestamps[-1]], y=[sensorValue4[-1]])
 
     new_data5 = dict(x=[timestamps[-1]], y=[sensorValue7[-1]])
-    new_data6 = dict(x=[timestamps[-1]], y=[sensorValue6[-1]])
+    new_data6 = dict(x=[timestamps[-1]], y=[sensorValue11[-1]])
 
-    new_data7 = dict(x=[sensorValue4[-1]], y=[sensorValue5[-1]], z=[sensorValue6[-1]])
+    new_data7 = dict(x=[sensorValue5[-1]], y=[sensorValue6[-1]], z=[sensorValue7[-1]])
     new_data8 = dict(x=[sensorValue8[-1]], y=[sensorValue9[-1]], z=[sensorValue10[-1]])
     
     source1.stream(new_data1, rollover=200)
@@ -137,16 +137,16 @@ p6.yaxis.axis_label = "UV"
 
 #tables
 columns = [
-        TableColumn(field="x", title="rotacionX"),
-        TableColumn(field="y", title="rotacionY"),
-        TableColumn(field="z", title="rotacionZ"),
+        TableColumn(field="x", title="aceleraciónX"),
+        TableColumn(field="y", title="aceleraciónY"),
+        TableColumn(field="z", title="aceleraciónZ"),
     ]
 data_table = DataTable(source=source7, columns=columns, width=400, height=280)
 
 columns_2 = [
-        TableColumn(field="x", title="aceleracionX"),
-        TableColumn(field="y", title="aceleracionY"),
-        TableColumn(field="z", title="aceleracionZ"),
+        TableColumn(field="x", title="rotacionX"),
+        TableColumn(field="y", title="rotacionY"),
+        TableColumn(field="z", title="rotacionZ"),
 ]
 data_table2 = DataTable(source=source8, columns=columns_2, width=400, height=280)
 
