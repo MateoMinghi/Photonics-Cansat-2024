@@ -1,6 +1,3 @@
-#https://diyusthad.com/2023/06/lora-module-sx1278-with-arduino.html
-
-
 from bokeh.io import curdoc
 from bokeh.models import ColumnDataSource, DataTable, TableColumn, GMapOptions, Button,CustomJS, Div, Styles
 from bokeh.layouts import layout
@@ -12,10 +9,10 @@ import random,serial
 
 # Configuración de la conexión serial (ajusta el puerto según tu configuración)
 arduino_port = "COM5"  # Reemplaza con tu puerto
-baud_rate = 115200
+baud_rate = 9600
 
 # Necesitarás una clave API de Google Maps
-google_api_key = "AIzaSyBmEuJTZzc1DktZZIgOgbKNpMxQgWCEwi8"
+google_api_key = "*******"
 
 # Iniciar conexión serial con Arduino
 try:
@@ -76,116 +73,98 @@ button.on_click(toggle_servo)
 
 
 # Inicialización de las listas donde se guardan los valores de los sensores 
-sensorValue1 = []
-sensorValue2 = []
-sensorValue3 = []
-sensorValue4 = []
-sensorValue5 = []
-sensorValue6 = []
-sensorValue7 = []
-sensorValue8 = []
-sensorValue9 = []
-sensorValue10 = []
-sensorValue11 = []
+sensor_values = {i: [] for i in range(1, 13)}
 timestamps = []
 
+# Función para simular datos
+def simulate_data():
+    simulated_values = [random.uniform(20, 30) for _ in range(8)]  # Valores de sensores arbitrarios
+    lat1, lon1 = random.uniform(20.611412, 20.615), random.uniform(-100.41, -100.40)  # Primer GPS
+    lat2, lon2 = random.uniform(20.611412, 20.615), random.uniform(-100.41, -100.40)  # Segundo GPS
+    simulated_values.extend([lat1, lon1, lat2, lon2])
+    return simulated_values
 
 # Leer y procesar los datos que arrojan los sensores
 def process_data():
     try:
-        line = ser.readline().decode('utf-8').strip()
-        print(f"Raw line: {line}")
-        sensorValues = line.split(',')
-        if len(sensorValues) == 11:
-            sensorValue1.append(float(sensorValues[0]))
-            sensorValue2.append(float(sensorValues[1]))
-            sensorValue3.append(float(sensorValues[2]))
-            sensorValue4.append(float(sensorValues[3]))
-            sensorValue5.append(float(sensorValues[4]))
-            sensorValue6.append(float(sensorValues[5]))
-            sensorValue7.append(float(sensorValues[6]))
-            sensorValue8.append(float(sensorValues[7]))
-            sensorValue9.append(float(sensorValues[8]))
-            sensorValue10.append(float(sensorValues[9]))
-            sensorValue11.append(float(sensorValues[10]))
-
-            timestamps.append(datetime.now())
-        else:
-            print(f"Unexpected data format: {line}")
+        sensorValues = simulate_data()
+        for i in range(1, 13):
+            sensor_values[i].append(sensorValues[i-1])
+        timestamps.append(datetime.now())
     except Exception as e:
         print(f"Error processing data: {e}")
 
-
 # Crear un mapa con los datos de GPS
-#map_options = GMapOptions(lat=20.613, lng=-100.405, map_type="roadmap", zoom=15)
-#p_map = gmap(google_api_key, map_options, title="GPS Map", width=400, height=280)
-#source_map = ColumnDataSource(data=dict(x=[], y=[]))
-#p_map.circle(x="x", y="Y", size=10, fill_color="red", fill_alpha=0.6, line_color="red", source=source_map)
+map_options = GMapOptions(lat=20.613, lng=-100.405, map_type="roadmap", zoom=15)
+p_map = gmap("AIzaSyBmEuJTZzc1DktZZIgOgbKNpMxQgWCEwi8", map_options, title="GPS Map", width=400, height=280)
+source_map = ColumnDataSource(data=dict(x=[], y=[]))
+p_map.circle(x="x", y="y", size=10, fill_color="red", fill_alpha=0.6, line_color="red", source=source_map)
 
 # Función para calcular la distancia entre dos puntos GPS en kilómetros
-#def calculate_distance(lat1, lon1, lat2, lon2):
-    #R = 6371.0  # Radio de la Tierra en kilómetros
-    #dlat = radians(lat2 - lat1)
-    #dlon = radians(lon2 - lon1)
-    #a = sin(dlat / 2)*2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon / 2)*2
-    #c = 2 * atan2(sqrt(a), sqrt(1 - a))
-    #distance = R * c
-    #return distance
+def calculate_distance(lat1, lon1, lat2, lon2):
+    R = 6371.0  # Radio de la Tierra en kilómetros
+    dlat = radians(lat2 - lat1)
+    dlon = radians(lon2 - lon1)
+    a = sin(dlat / 2)*2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon / 2)*2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+    distance = R * c
+    return distance
 
 # Crear las fuentes de datos para las tablas
 source_table1 = ColumnDataSource(data=dict(x=[], y=[]))
 source_table2 = ColumnDataSource(data=dict(x=[], y=[]))
 
 # Definir las columnas para las tablas
-#columns1 = [
-    #TableColumn(field="x", title="GPS1 X"),
-    #TableColumn(field="y", title="GPS1 Y"),
-#]
-#columns2 = [
-    #TableColumn(field="x", title="GPS2 X"),
-    #TableColumn(field="y", title="GPS2 Y"),
-#]
+columns1 = [
+    TableColumn(field="x", title="GPS1 X"),
+    TableColumn(field="y", title="GPS1 Y"),
+]
+columns2 = [
+    TableColumn(field="x", title="GPS2 X"),
+    TableColumn(field="y", title="GPS2 Y"),
+]
 
 
 # Crear las tablas
-#data_table1 = DataTable(source=source_table1, columns=columns1, width=400, height=280,index_position=-1)
-#data_table2 = DataTable(source=source_table2, columns=columns1, width=400, height=280,index_position=-1)
+data_table1 = DataTable(source=source_table1, columns=columns1, width=400, height=280,index_position=-1)
+data_table2 = DataTable(source=source_table2, columns=columns1, width=400, height=280,index_position=-1)
 
 
 # Agregar el JavaScript para el autoscroll
-#data_table1.js_on_change("source", CustomJS(code="""
-    #console.log('Updating scroll position:...');
-    #setTimeout(function() {
-        #var scrollDiv = document.getElementsByClassName('slick-viewport')[0];
-        #scrollDiv.scrollTop = scrollDiv.scrollHeight;
-    #}, 500);
-#"""))
+data_table1.js_on_change("source", CustomJS(code="""
+    console.log('Updating scroll position:...');
+    setTimeout(function() {
+        var scrollDiv = document.getElementsByClassName('slick-viewport')[0];
+        scrollDiv.scrollTop = scrollDiv.scrollHeight;
+    }, 500);
+"""))
 
-#data_table2.js_on_change("source", CustomJS(code="""
-    #console.log('Updating scroll position:...');
-    #setTimeout(function() {
-        #var scrollDiv = document.getElementsByClassName('slick-viewport')[1];
-        #scrollDiv.scrollTop = scrollDiv.scrollHeight;
-#    }, 500);
-#"""))
+data_table2.js_on_change("source", CustomJS(code="""
+    console.log('Updating scroll position:...');
+    setTimeout(function() {
+        var scrollDiv = document.getElementsByClassName('slick-viewport')[1];
+        scrollDiv.scrollTop = scrollDiv.scrollHeight;
+    }, 500);
+"""))
 
 # Actualizar los datos para hacer el "stream"
 def update():
     process_data()
     
     if len(timestamps) > 0:
-        new_data1 = dict(x=[timestamps[-1]], y=[sensorValue1[-1]])
-        new_data2 = dict(x=[sensorValue4[-1]], y=[sensorValue2[-1]])
-
-        new_data3 = dict(x=[timestamps[-1]], y=[sensorValue3[-1]])
-        new_data4 = dict(x=[timestamps[-1]], y=[sensorValue4[-1]])
-
-        new_data5 = dict(x=[timestamps[-1]], y=[sensorValue7[-1]])
-        new_data6 = dict(x=[timestamps[-1]], y=[sensorValue11[-1]])
-
-        new_data7 = dict(x=[sensorValue5[-1]], y=[sensorValue6[-1]], z=[sensorValue7[-1]])
-        new_data8 = dict(x=[sensorValue8[-1]], y=[sensorValue9[-1]], z=[sensorValue10[-1]])
+        new_data1 = dict(x=[timestamps[-1]], y=[sensor_values[1][-1]])
+        new_data2 = dict(x=[timestamps[-1]], y=[sensor_values[2][-1]])
+        new_data3 = dict(x=[timestamps[-1]], y=[sensor_values[3][-1]])
+        new_data4 = dict(x=[timestamps[-1]], y=[sensor_values[4][-1]])
+        new_data5 = dict(x=[timestamps[-1]], y=[sensor_values[7][-1]])
+        new_data6 = dict(x=[timestamps[-1]], y=[sensor_values[6][-1]])
+        new_data7 = dict(x=[sensor_values[4][-1]], y=[sensor_values[5][-1]], z=[sensor_values[6][-1]])
+        new_data8 = dict(x=[sensor_values[8][-1]], y=[sensor_values[9][-1]], z=[sensor_values[10][-1]])
         
+        # Datos del mapa
+        lat1, lon1 = sensor_values[10][-1], sensor_values[11][-1]
+        new_data_map = dict(x=[lat1], y=[lon1])
+
         source1.stream(new_data1, rollover=200)
         p1.title.text = "Temperatura"
         source2.stream(new_data2, rollover=200)
@@ -200,6 +179,16 @@ def update():
         p6.title.text = "UV"
         source7.stream(new_data7, rollover=200)
         source8.stream(new_data8, rollover=200)
+        source_map.stream(new_data_map, rollover=200)
+        
+        # Datos para las tablas
+        new_data_table1 = dict(x=[sensor_values[10][-1]], y=[sensor_values[11][-1]])
+        new_data_table2 = dict(x=[sensor_values[8][-1]], y=[sensor_values[9][-1]])
+
+        # Actualizar las fuentes de datos de las tablas
+        source_table1.stream(new_data_table1, rollover=200)
+        source_table2.stream(new_data_table2, rollover=200)
+
         print(datetime.now())
 
 # Las líneas azules de la gráfica
@@ -274,6 +263,7 @@ data_table4 = DataTable(source=source8, columns=columns_2, width=400, height=280
 lay_out = layout([
         [p1, p2, p3],
         [p4, p5, p6],
+        [p_map, data_table1,data_table2],
         [data_table3, data_table4, button, div],
     ]) 
 

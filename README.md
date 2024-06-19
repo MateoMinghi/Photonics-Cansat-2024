@@ -91,7 +91,7 @@ bokeh serve --show main.py
 
 Of course no data will be displayed unless the circuits are up and running, but a simulation of the interphase working can be found in /simulations.py
 
-<p align="center"> <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/visualization.png" width="60%"/></p> 
+<p align="center"> <img src="https://github.com/MateoMinghi/Photonics/blob/main/img/visualization_cansat.jpg" width="60%"/></p> 
 
 
 [^1]: Team composed by: Mateo Minghi, Samir Baidon, Manuel Romero, Roberto Ibarra, Daniela Jimenez
