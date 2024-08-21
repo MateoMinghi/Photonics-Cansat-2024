@@ -75,7 +75,7 @@ Project Design Slides:
 * https://docs.google.com/presentation/d/1cosc5_qBbo0QIGDXYjj1O37L7R_xW0Vm/edit#slide=id.p1
  
 ---
-### Data Visualization Interphase
+### Data Visualization Interface
 
 In order to visualize the data retreived by the sensors, and transmited by the LoRa modules, it was decided to use Bokeh. Bokeh is an interactive visualization python library for web browsers. 
 
